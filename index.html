@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal · Suite de Gestión Call Center</title>
+<style>
+:root{
+  --navy:#0B2545; --navy-2:#13315C; --navy-3:#1D4E89;
+  --teal:#0FA3A3; --teal-2:#14B8A6; --teal-soft:#E0F5F3;
+  --white:#FFFFFF; --bg:#F4F6F9; --line:#E3E8EF;
+  --ink:#0B2545; --ink-soft:#5B6B82; --ink-faint:#93A1B5;
+  --shadow:0 1px 3px rgba(11,37,69,.08),0 10px 30px rgba(11,37,69,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+
+header.top{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-3) 75%,var(--teal) 200%);color:#fff;padding:48px 24px 60px;text-align:center}
+header.top .iso{width:52px;height:52px;margin-bottom:14px}
+header.top h1{font-size:26px;font-weight:800;letter-spacing:.02em}
+header.top p{font-size:14px;opacity:.8;margin-top:8px;max-width:480px;margin-left:auto;margin-right:auto}
+
+main{max-width:980px;margin:-32px auto 60px;padding:0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+
+.card{background:var(--white);border-radius:16px;box-shadow:var(--shadow);padding:26px 24px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;transition:transform .18s,box-shadow .18s;text-decoration:none;color:inherit}
+.card.activo{cursor:pointer}
+.card.activo:hover,.card.activo:focus-visible{transform:translateY(-4px);box-shadow:0 4px 10px rgba(11,37,69,.10),0 18px 34px rgba(11,37,69,.16)}
+.card.activo:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.card.inactivo{opacity:.6}
+.card .top-bar{height:4px;border-radius:2px;width:38px}
+.card.activo .top-bar{background:var(--teal)}
+.card.inactivo .top-bar{background:var(--ink-faint)}
+.card .ic{font-size:30px}
+.card h2{font-size:17px;color:var(--navy);font-weight:700}
+.card p{font-size:13px;color:var(--ink-soft);line-height:1.5;flex:1}
+.badge{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:99px}
+.badge.ok{background:#E7F6EC;color:#1F9D55}
+.badge.dev{background:#FCF3DC;color:#C9880A}
+.card .enter{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--teal);margin-top:2px}
+.card.activo:hover .enter{text-decoration:underline}
+
+footer{text-align:center;padding:20px;font-size:12px;color:var(--ink-faint)}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  .card.activo:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <svg class="iso" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 4h13a11 11 0 0 1 0 22H14v10H6V4zm8 7v8h5a4 4 0 0 0 0-8h-5z" fill="#14B8A6"/><path d="M27 26l7 7-7 7v-4.5h-5v-5h5V26z" fill="#0FA3A3" opacity=".85"/></svg>
+  <h1>Suite de Gestión Call Center</h1>
+  <p>Un solo punto de entrada para todas las herramientas del equipo. Elige el programa al que quieres entrar.</p>
+</header>
+<main>
+  <div class="grid">
+
+    <a class="card activo" href="https://manuelmc1979.github.io/INDICADORES-PROGESYS/" target="_blank" rel="noopener">
+      <div class="top-bar"></div>
+      <div class="ic">📊</div>
+      <span class="badge ok">Disponible</span>
+      <h2>PROGESYS</h2>
+      <p>Dashboard, indicadores y gestión diaria del call center: asistencia, KPI, calidad, EPA y outbound.</p>
+      <span class="enter">Entrar →</span>
+    </a>
+
+    <a class="card activo" href="https://manuelmc1979.github.io/CALIDAD/" target="_blank" rel="noopener">
+      <div class="top-bar"></div>
+      <div class="ic">🎯</div>
+      <span class="badge ok">Disponible</span>
+      <h2>Coaching</h2>
+      <p>Seguimiento de feedback, compromisos y planes de mejora por ejecutivo.</p>
+      <span class="enter">Entrar →</span>
+    </a>
+
+    <a class="card activo" href="https://progesys-turnos.vercel.app/dashboard" target="_blank" rel="noopener">
+      <div class="top-bar"></div>
+      <div class="ic">⏱</div>
+      <span class="badge ok">Disponible</span>
+      <h2>Turnos</h2>
+      <p>Marcaje de entrada y salida en tiempo real, conectado directamente con Asistencia.</p>
+      <span class="enter">Entrar →</span>
+    </a>
+
+    <div class="card inactivo">
+      <div class="top-bar"></div>
+      <div class="ic">🎓</div>
+      <span class="badge dev">En desarrollo</span>
+      <h2>Capacitaciones</h2>
+      <p>Cursos, evaluaciones y certificaciones del equipo.</p>
+    </div>
+
+  </div>
+</main>
+<footer>PROGESYS © 2026 · Suite operativa del call center</footer>
+</body>
+</html>
